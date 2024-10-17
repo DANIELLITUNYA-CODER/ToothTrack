@@ -7,26 +7,37 @@
     <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
- 
-    <header>
-        <h1>Welcome to Tooth Track</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
-        </nav>
-    </header>
+    {% include 'header.html' %}  <!-- Include header with navigation -->
 
+    <div class="slider">
+        <div class="slides">
+            <div class="slide active">
+                <img src="images/slider1.jpg" alt="Healthy Smile">
+            </div>
+            <div class="slide">
+                <img src="images/slider2.jpg" alt="Dental Checkup">
+            </div>
+            <div class="slide">
+                <img src="images/slider3.jpg" alt="Dental Care">
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
 
     <main>
-        <section>
-            <h2>Manage Your Dental Appointments</h2>
-            <p>Tooth Track helps patients and dentists easily manage appointments and treatment plans.</p>
-            <p>Log in or register to start tracking your dental health today!</p>
+        <section class="services">
+            <div class="service-card">
+                <h3>Teeth Whitening</h3>
+                <p>Brighten your smile with our professional teeth whitening services.</p>
+            </div>
+            <div class="service-card">
+                <h3>Regular Checkups</h3>
+                <p>Ensure your dental health with regular checkups and cleanings.</p>
+            </div>
         </section>
     </main>
+    
     <footer>
         <p>&copy; 2024 Tooth Track. All rights reserved.</p>
     </footer>
