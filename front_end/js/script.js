@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Tooth Track website is ready!");
 
+    // Navigation links logic
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Login form submission logic
     const loginForm = document.querySelector('#loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', function(event) {
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Registration form submission logic
     const registerForm = document.querySelector('#registerForm');
     if (registerForm) {
         registerForm.addEventListener('submit', function(event) {
@@ -80,6 +83,26 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
+    // Slider functionality
+    let currentSlide = 0;
+
+    function changeSlide(direction) {
+        const slides = document.querySelectorAll('.slide');
+        slides[currentSlide].classList.remove('active');
+
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+
+        // Adjust the slides' position
+        const slideWidth = slides[0].clientWidth;
+        document.querySelector('.slides').style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    // Automatically change slides every 5 seconds
+    setInterval(() => {
+        changeSlide(1);
+    }, 5000);
 });
 
 function showNotification(message) {
