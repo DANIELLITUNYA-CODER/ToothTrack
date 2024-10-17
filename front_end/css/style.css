@@ -1,7 +1,7 @@
 /* General body styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #f0f8ff, #e0f7fa); /* Light gradient background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Original font family */
+    background-color: #f0f8ff; /* Light blue background */
     margin: 0;
     padding: 0;
     text-align: center;
@@ -10,7 +10,7 @@ body {
 
 /* Header styling */
 h1, h2 {
-    color: #004d99; /* Dark blue for headings */
+    color: #2c3e50; /* Darker shade for headers */
     transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
 }
 
@@ -79,6 +79,7 @@ input:focus, select:focus {
     outline: none;
     border-color: #004d99; /* Dark blue border on focus */
 }
+
 .back-button-container {
     display: flex;
     align-items: center;
@@ -87,12 +88,13 @@ input:focus, select:focus {
 
 /* Button styling */
 button {
-    background-color: #28a745; /* Green background for buttons */
-    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
+    padding: 10px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -110,6 +112,7 @@ button:active {
 h2 {
     color: #004d99;
 }
+
 /* Back Button Styling */
 .back-button {
     background-color: transparent; /* Transparent background */
@@ -138,7 +141,6 @@ h2 {
 .back-arrow:hover {
     color: #ffdd57; /* Change color on hover */
 }
-
 
 /* Login and Register Page Specific Styles */
 .login-page, .register-page {
@@ -176,4 +178,48 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9rem;
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
